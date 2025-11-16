@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Peter Hyland — Software Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.08);
+      border-radius: 14px;
+      overflow: hidden;
+      padding: 40px 30px 30px 30px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ececec;
+      padding-bottom: 28px;
+      gap: 40px;
+    }
+    .profile-photo {
+      width: 175px;
+      height: 175px;
+      object-fit: cover;
+      border-radius: 100px;
+      border: 3px solid #4973c8;
+      box-shadow: 0 4px 16px rgba(73, 115, 200, 0.10);
+    }
+    .intro {
+      flex: 1;
+    }
+    .intro h1 {
+      margin-top: 0;
+      margin-bottom: 0.35em;
+      font-size: 2.35em;
+      font-weight: 700;
+      color: #4973c8;
+    }
+    .intro .contact {
+      font-size: 1em;
+      line-height: 1.7;
+      margin-bottom: 0.8em;
+      color: #444;
+    }
+    .section {
+      margin-top: 32px;
+      margin-bottom: 18px;
+    }
+    .section-title {
+      font-size: 1.24em;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #4973c8;
+      margin-bottom: 10px;
+      border-left: 4px solid #4973c8;
+      padding-left: 12px;
+    }
+    .awards-list,
+    .skills-list,
+    .projects-list,
+    .experience-list {
+      margin: 0;
+      padding-left: 1.3em;
+    }
+    .skills-tags {
+      margin: 0.4em 0 0.5em 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6em;
+    }
+    .skills-tag {
+      background: #edf2fa;
+      color: #4973c8;
+      font-size: 0.97em;
+      padding: 0.33em 0.85em;
+      border-radius: 16px;
+      margin-bottom: 4px;
+      border: 1px solid #cfd7e6;
+    }
+    .sub-detail {
+      color: #777;
+      font-size: 0.96em;
+    }
+    @media (max-width: 650px) {
+      .header, .container {
+        flex-direction: column;
+        padding: 18px 9px 20px 9px;
+      }
+      .header {
+        gap: 14px;
+        padding-bottom: 18px;
+      }
+      .profile-photo {
+        width: 105px;
+        height: 105px;
+      }
+    }
+
+    a {
+      color: #4973c8;
+      text-decoration: none;
+    }
+    a:hover, a:focus {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="profile.jpg" alt="Photo of Peter Hyland" class="profile-photo">
+      <div class="intro">
+        <h1>Peter Hyland</h1>
+        <div class="contact">
+          <div><strong>Software Developer</strong></div>
+          <div>Ireland • Remote</div>
+          <div>📞 <a href="tel:+353860763015">+353 860763015</a></div>
+          <div>📧 <a href="mailto:peterhyland101210@gmail.com">peterhyland101210@gmail.com</a></div>
+          <div>GitHub: <a href="https://github.com/peter-c-hyland" target="_blank">peter-c-hyland</a></div>
+        </div>
+        <div class="sub-detail">Computer Science graduate (First Class Honours, 1.1) with strong experience in Python, Swift, Java, JavaScript/TypeScript, and C. Passionate about AI/ML applications and experienced in developing, testing, and documenting code for data-driven systems. Skilled in explaining technical concepts and collaborating in fast-paced, remote environments.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Education</div>
+      <div>
+        <strong>University College Cork</strong> &mdash; BSc Computer Science (First Class Honours, 1.1)<br>
+        <span class="sub-detail">2021–2025</span><br>
+        <ul class="awards-list">
+          <li>Final Year Project: <em>Adaptive Learning App</em> (86%) — AI-powered mobile app using OCR, NLP, and LLMs to generate personalised learning modules.</li>
+          <li>Awards: Best Final Year Project (UCC 2025), 3rd Place AXIS BIC Entrepreneurship Award, UCC Sport Award (Rugby, 2025).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Technical Skills</div>
+      <div class="skills-tags">
+        <span class="skills-tag">Python</span>
+        <span class="skills-tag">Java</span>
+        <span class="skills-tag">JavaScript/TypeScript</span>
+        <span class="skills-tag">Swift</span>
+        <span class="skills-tag">C</span>
+        <span class="skills-tag">C++</span>
+        <span class="skills-tag">React</span>
+        <span class="skills-tag">React Native</span>
+        <span class="skills-tag">FastAPI</span>
+        <span class="skills-tag">Flask</span>
+        <span class="skills-tag">Docker</span>
+        <span class="skills-tag">AWS</span>
+        <span class="skills-tag">LLMs</span>
+        <span class="skills-tag">NLP</span>
+        <span class="skills-tag">OCR</span>
+        <span class="skills-tag">Machine Learning</span>
+        <span class="skills-tag">MySQL</span>
+        <span class="skills-tag">MongoDB</span>
+        <span class="skills-tag">Neo4j</span>
+        <span class="skills-tag">REST APIs</span>
+        <span class="skills-tag">Test-Driven Development</span>
+        <span class="skills-tag">Data Visualisation</span>
+        <span class="skills-tag">Cloud Services</span>
+      </div>
+      <div class="sub-detail">Quick to learn new languages and frameworks as needed.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Projects</div>
+      <ul class="projects-list">
+        <li>
+          <strong>Adaptive Learning App:</strong> AI-powered mobile app adapting content to learning styles (VARK). Integrated OCR, NLP, and LLMs. Awarded <em>Best Final Year Project 2025</em>.
+        </li>
+        <li>
+          <strong>Machine Learning:</strong> Built housing price prediction models using Linear Regression and Random Forest.
+        </li>
+        <li>
+          <strong>Algorithms and Data Structures:</strong> Compared efficiency of sorting algorithms and tested against ChatGPT-generated versions.
+        </li>
+        <li>
+          <strong>Web Development:</strong> Created an online rugby shop with cart and checkout system using JavaScript, HTML, and CSS.
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Experience</div>
+      <ul class="experience-list">
+        <li>
+          <strong>SkillsBase</strong>, Cork, Ireland (Hybrid)<br>
+          <span class="sub-detail">Software Developer — Mar 2024 – Present</span>
+          <ul>
+            <li>Developed backend services in Python (FastAPI) and deployed with AWS + Docker.</li>
+            <li>Created a React Native app with Bluetooth Low Energy (BLE) integration.</li>
+            <li>Built an internal analytics dashboard (React + FastAPI + MySQL) for real-time data analysis.</li>
+            <li>Designed and delivered AI-powered micro-learning features using OCR + LLMs.</li>
+            <li>Wrote clear technical documentation and collaborated with cross-functional teams.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
