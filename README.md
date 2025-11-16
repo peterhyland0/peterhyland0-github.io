@@ -1,2 +1,2 @@
-# peterhyland0-github.io
+# Peter Hyland 
 Personal website
