@@ -6,210 +6,330 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Roboto', Arial, sans-serif;
-      background: #f5f7fa;
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #4973c8;
+      color: #fff;
+      padding: 0 48px;
+      height: 60px;
+      box-shadow: 0 2px 12px rgba(73,115,200,0.08);
+    }
+    .nav-logo {
+      font-size: 1.35em;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 28px;
       margin: 0;
       padding: 0;
-      color: #222;
+    }
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1em;
+      transition: color 0.2s;
+    }
+    .nav-links li a:hover {
+      color: #e3e9f6;
+      text-decoration: underline;
+    }
+    .footer {
+      background: #f5f7fa;
+      color: #4973c8;
+      text-align: center;
+      padding: 24px 0 16px 0;
+      font-size: 1em;
+      margin-top: 48px;
+      border-top: 1px solid #e3e9f6;
+    }
+    .footer-links a {
+      color: #4973c8;
+      text-decoration: none;
+      margin: 0 6px;
+      font-weight: 500;
+    }
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background: linear-gradient(120deg, #f5f7fa 0%, #e3e9f6 100%);
+      margin: 0;
+      padding: 0;
+      color: #23272f;
     }
     .container {
       max-width: 900px;
-      margin: 40px auto;
+      margin: 48px auto;
       background: #fff;
-      box-shadow: 0 2px 24px rgba(0,0,0,0.08);
-      border-radius: 14px;
+      box-shadow: 0 4px 32px rgba(73,115,200,0.10);
+      border-radius: 22px;
       overflow: hidden;
-      padding: 40px 30px 30px 30px;
+      padding: 0 0 40px 0;
     }
     .header {
       display: flex;
       align-items: center;
-      border-bottom: 1px solid #ececec;
-      padding-bottom: 28px;
-      gap: 40px;
+      gap: 48px;
+      padding: 48px 48px 32px 48px;
+      background: linear-gradient(90deg, #4973c8 0%, #7ea7e9 100%);
+      color: #fff;
     }
     .profile-photo {
-      width: 175px;
-      height: 175px;
+      width: 160px;
+      height: 160px;
       object-fit: cover;
       border-radius: 100px;
-      border: 3px solid #4973c8;
-      box-shadow: 0 4px 16px rgba(73, 115, 200, 0.10);
+      border: 4px solid #fff;
+      box-shadow: 0 4px 24px rgba(73, 115, 200, 0.18);
     }
     .intro {
       flex: 1;
     }
     .intro h1 {
       margin-top: 0;
-      margin-bottom: 0.35em;
-      font-size: 2.35em;
-      font-weight: 700;
-      color: #4973c8;
+      margin-bottom: 0.25em;
+      font-size: 2.7em;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 0.01em;
     }
     .intro .contact {
-      font-size: 1em;
+      font-size: 1.1em;
       line-height: 1.7;
-      margin-bottom: 0.8em;
+      margin-bottom: 1.2em;
+      color: #e3e9f6;
+    }
+    .about {
+      margin: 0 auto;
+      padding: 38px 48px 0 48px;
+      font-size: 1.25em;
       color: #444;
+      max-width: 700px;
+      text-align: center;
     }
-    .section {
-      margin-top: 32px;
-      margin-bottom: 18px;
+    .projects-section {
+      margin: 48px 0 0 0;
+      padding: 0 48px;
     }
-    .section-title {
-      font-size: 1.24em;
+    .projects-title {
+      font-size: 1.5em;
       font-weight: 700;
-      letter-spacing: 0.05em;
       color: #4973c8;
-      margin-bottom: 10px;
-      border-left: 4px solid #4973c8;
-      padding-left: 12px;
+      margin-bottom: 24px;
+      text-align: center;
     }
-    .awards-list,
-    .skills-list,
-    .projects-list,
-    .experience-list {
-      margin: 0;
-      padding-left: 1.3em;
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 32px;
     }
-    .skills-tags {
-      margin: 0.4em 0 0.5em 0;
-      padding: 0;
+    .project-card {
+      background: #f5f7fa;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(73,115,200,0.07);
+      padding: 28px 22px 22px 22px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.6em;
+      flex-direction: column;
+      align-items: flex-start;
+      transition: box-shadow 0.2s;
+    }
+    .project-card:hover {
+      box-shadow: 0 6px 24px rgba(73,115,200,0.13);
+    }
+    .project-title {
+      font-size: 1.15em;
+      font-weight: 700;
+      color: #4973c8;
+      margin-bottom: 0.5em;
+    }
+    .project-desc {
+      color: #333;
+      font-size: 1em;
+      margin-bottom: 0.5em;
+    }
+    .project-badge {
+      display: inline-block;
+      background: #7ea7e9;
+      color: #fff;
+      font-size: 0.92em;
+      border-radius: 12px;
+      padding: 0.18em 0.8em;
+      margin-right: 0.5em;
+      margin-bottom: 0.2em;
     }
     .skills-tag {
-      background: #edf2fa;
+      display: inline-block;
+      background: #e3e9f6;
       color: #4973c8;
-      font-size: 0.97em;
-      padding: 0.33em 0.85em;
-      border-radius: 16px;
-      margin-bottom: 4px;
-      border: 1px solid #cfd7e6;
-    }
-    .sub-detail {
-      color: #777;
-      font-size: 0.96em;
+      font-size: 0.98em;
+      border-radius: 10px;
+      padding: 0.18em 0.8em;
+      margin-right: 0.3em;
+      margin-bottom: 0.2em;
+      font-weight: 500;
     }
     @media (max-width: 650px) {
-      .header, .container {
-        flex-direction: column;
-        padding: 18px 9px 20px 9px;
-      }
       .header {
-        gap: 14px;
-        padding-bottom: 18px;
+        flex-direction: column;
+        gap: 18px;
+        padding: 24px 10px 18px 10px;
       }
       .profile-photo {
-        width: 105px;
-        height: 105px;
+        width: 90px;
+        height: 90px;
+      }
+      .about, .projects-section {
+        padding: 18px 8px 0 8px;
       }
     }
-
     a {
       color: #4973c8;
       text-decoration: none;
+      transition: color 0.2s;
     }
     a:hover, a:focus {
+      color: #2d4e8c;
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
+  <nav class="navbar">
+    <div class="nav-logo">Peter Hyland</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="mailto:peterhyland101210@gmail.com">Contact</a></li>
+    </ul>
+  </nav>
   <div class="container">
     <div class="header">
-      <img src="profile-photo.jpeg" alt="Photo of Peter Hyland" class="profile-photo">
+      <img src="images/profile-photo.jpeg" alt="Photo of Peter Hyland" class="profile-photo">
       <div class="intro">
         <h1>Peter Hyland</h1>
         <div class="contact">
-          <div><strong>Software Developer</strong></div>
-          <div>Ireland • Remote</div>
-          <div>📞 <a href="tel:+353860763015">+353 860763015</a></div>
+          <div><strong>Software Developer</strong> in Ireland</div>
           <div>📧 <a href="mailto:peterhyland101210@gmail.com">peterhyland101210@gmail.com</a></div>
           <div>GitHub: <a href="https://github.com/peter-c-hyland" target="_blank">peter-c-hyland</a></div>
         </div>
-        <div class="sub-detail">Computer Science graduate (First Class Honours, 1.1) with strong experience in Python, Swift, Java, JavaScript/TypeScript, and C. Passionate about AI/ML applications and experienced in developing, testing, and documenting code for data-driven systems. Skilled in explaining technical concepts and collaborating in fast-paced, remote environments.</div>
       </div>
     </div>
-
-    <div class="section">
-      <div class="section-title">Education</div>
-      <div>
-        <strong>University College Cork</strong> &mdash; BSc Computer Science (First Class Honours, 1.1)<br>
-        <span class="sub-detail">2021–2025</span><br>
-        <ul class="awards-list">
-          <li>Final Year Project: <em>Adaptive Learning App</em> (86%) — AI-powered mobile app using OCR, NLP, and LLMs to generate personalised learning modules.</li>
-          <li>Awards: Best Final Year Project (UCC 2025), 3rd Place AXIS BIC Entrepreneurship Award, UCC Sport Award (Rugby, 2025).</li>
-        </ul>
+    <div class="about" id="about">
+      <h2 style="margin-top:0; color:#4973c8; font-size:2em;">About Me</h2>
+      <p style="font-size:1.15em; color:#333; max-width:650px; margin:0 auto 18px auto;">Computer Science graduate (First Class Honours, 1.1) with strong experience in Python, Swift, Java, JavaScript/TypeScript, and C. Passionate about AI/ML applications and experienced in developing, testing, and documenting code for data-driven systems. Skilled in explaining technical concepts clearly and collaborating in fast-paced, remote environments.</p>
+      <div style="margin: 18px 0 0 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 32px;">
+        <div style="min-width:180px;"><strong>Location:</strong> Ireland (Remote)</div>
+        <div style="min-width:180px;"><strong>Email:</strong> <a href="mailto:peterhyland101210@gmail.com">peterhyland101210@gmail.com</a></div>
+        <div style="min-width:180px;"><strong>Phone:</strong> <a href="tel:+353860763015">+353 860763015</a></div>
+        <div style="min-width:180px;"><strong>GitHub:</strong> <a href="https://github.com/peter-c-hyland" target="_blank">peter-c-hyland</a></div>
       </div>
     </div>
-
-    <div class="section">
-      <div class="section-title">Technical Skills</div>
-      <div class="skills-tags">
-        <span class="skills-tag">Python</span>
-        <span class="skills-tag">Java</span>
-        <span class="skills-tag">JavaScript/TypeScript</span>
-        <span class="skills-tag">Swift</span>
-        <span class="skills-tag">C</span>
-        <span class="skills-tag">C++</span>
-        <span class="skills-tag">React</span>
-        <span class="skills-tag">React Native</span>
-        <span class="skills-tag">FastAPI</span>
-        <span class="skills-tag">Flask</span>
-        <span class="skills-tag">Docker</span>
-        <span class="skills-tag">AWS</span>
-        <span class="skills-tag">LLMs</span>
-        <span class="skills-tag">NLP</span>
-        <span class="skills-tag">OCR</span>
-        <span class="skills-tag">Machine Learning</span>
-        <span class="skills-tag">MySQL</span>
-        <span class="skills-tag">MongoDB</span>
-        <span class="skills-tag">Neo4j</span>
-        <span class="skills-tag">REST APIs</span>
-        <span class="skills-tag">Test-Driven Development</span>
-        <span class="skills-tag">Data Visualisation</span>
-        <span class="skills-tag">Cloud Services</span>
+    <section id="education" style="margin:56px auto 0 auto; max-width:700px;">
+      <h2 style="color:#4973c8; font-size:1.6em; margin-bottom:0.5em;">Education</h2>
+      <div style="background:#f5f7fa; border-radius:14px; box-shadow:0 2px 12px rgba(73,115,200,0.07); padding:28px 28px 18px 28px;">
+        <div style="font-size:1.15em; font-weight:600; color:#2d4e8c;">University College Cork</div>
+        <div style="color:#4973c8; font-weight:500;">BSc Computer Science <span style="color:#222; font-weight:400;">(First Class Honours, 1.1)</span></div>
+        <div style="color:#666; font-size:1em; margin-bottom:0.7em;">2021–2025</div>
+        <div style="margin-bottom:0.5em;"><strong>Final Year Project:</strong> <em>Adaptive Learning App</em> (86%) — AI-powered mobile app using OCR, NLP, and LLMs to generate personalised learning modules.</div>
+        <div style="margin-bottom:0.2em;"><strong>Awards:</strong> Best Final Year Project (UCC 2025), 3rd Place AXIS BIC Entrepreneurship Award, UCC Sport Award (Rugby, 2025).</div>
       </div>
-      <div class="sub-detail">Quick to learn new languages and frameworks as needed.</div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Projects</div>
-      <ul class="projects-list">
-        <li>
-          <strong>Adaptive Learning App:</strong> AI-powered mobile app adapting content to learning styles (VARK). Integrated OCR, NLP, and LLMs. Awarded <em>Best Final Year Project 2025</em>.
-        </li>
-        <li>
-          <strong>Machine Learning:</strong> Built housing price prediction models using Linear Regression and Random Forest.
-        </li>
-        <li>
-          <strong>Algorithms and Data Structures:</strong> Compared efficiency of sorting algorithms and tested against ChatGPT-generated versions.
-        </li>
-        <li>
-          <strong>Web Development:</strong> Created an online rugby shop with cart and checkout system using JavaScript, HTML, and CSS.
-        </li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Experience</div>
-      <ul class="experience-list">
-        <li>
-          <strong>SkillsBase</strong>, Cork, Ireland (Hybrid)<br>
-          <span class="sub-detail">Software Developer — Mar 2024 – Present</span>
-          <ul>
-            <li>Developed backend services in Python (FastAPI) and deployed with AWS + Docker.</li>
-            <li>Created a React Native app with Bluetooth Low Energy (BLE) integration.</li>
-            <li>Built an internal analytics dashboard (React + FastAPI + MySQL) for real-time data analysis.</li>
-            <li>Designed and delivered AI-powered micro-learning features using OCR + LLMs.</li>
-            <li>Wrote clear technical documentation and collaborated with cross-functional teams.</li>
-          </ul>
-        </li>
-      </ul>
+    </section>
+    <section id="skills" style="margin:56px auto 0 auto; max-width:900px;">
+      <h2 style="color:#4973c8; font-size:1.6em; margin-bottom:0.5em;">Technical Skills</h2>
+      <div style="display:flex; flex-wrap:wrap; gap:32px; justify-content:center;">
+        <div>
+          <div style="font-weight:600; color:#2d4e8c; margin-bottom:0.3em;">Languages</div>
+          <div style="display:flex; flex-wrap:wrap; gap:0.5em;">
+            <span class="skills-tag">Python</span>
+            <span class="skills-tag">Java</span>
+            <span class="skills-tag">JavaScript/TypeScript</span>
+            <span class="skills-tag">Swift</span>
+            <span class="skills-tag">C</span>
+            <span class="skills-tag">C++</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-weight:600; color:#2d4e8c; margin-bottom:0.3em;">Frameworks</div>
+          <div style="display:flex; flex-wrap:wrap; gap:0.5em;">
+            <span class="skills-tag">React</span>
+            <span class="skills-tag">React Native</span>
+            <span class="skills-tag">FastAPI</span>
+            <span class="skills-tag">Flask</span>
+            <span class="skills-tag">Docker</span>
+            <span class="skills-tag">AWS</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-weight:600; color:#2d4e8c; margin-bottom:0.3em;">AI / ML</div>
+          <div style="display:flex; flex-wrap:wrap; gap:0.5em;">
+            <span class="skills-tag">LLMs</span>
+            <span class="skills-tag">NLP</span>
+            <span class="skills-tag">OCR</span>
+            <span class="skills-tag">Machine Learning</span>
+            <span class="skills-tag">Regression</span>
+            <span class="skills-tag">Random Forest</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-weight:600; color:#2d4e8c; margin-bottom:0.3em;">Databases</div>
+          <div style="display:flex; flex-wrap:wrap; gap:0.5em;">
+            <span class="skills-tag">MySQL</span>
+            <span class="skills-tag">MongoDB</span>
+            <span class="skills-tag">Neo4j</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-weight:600; color:#2d4e8c; margin-bottom:0.3em;">Practices</div>
+          <div style="display:flex; flex-wrap:wrap; gap:0.5em;">
+            <span class="skills-tag">Clear technical writing</span>
+            <span class="skills-tag">REST APIs</span>
+            <span class="skills-tag">Test-Driven Development</span>
+            <span class="skills-tag">Cloud Services</span>
+            <span class="skills-tag">Data Visualisation</span>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; color:#666; font-size:1em; margin-top:1em;">Quick to learn new languages and frameworks as needed.</div>
+    </section>
+    <div class="projects-section" id="projects">
+      <div class="projects-title">Featured Projects</div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-title">Adaptive Learning App <span class="project-badge">AI</span> <span class="project-badge">Mobile</span></div>
+          <div class="project-desc">An award-winning mobile app that adapts learning content to your style (VARK). Uses OCR, NLP, and LLMs to generate personalized modules. <br><em>Best Final Year Project 2025</em></div>
+        </div>
+        <div class="project-card">
+          <div class="project-title">Machine Learning Models <span class="project-badge">ML</span></div>
+          <div class="project-desc">Built housing price prediction models using Linear Regression and Random Forest. Focused on explainability and real-world data.</div>
+        </div>
+        <div class="project-card">
+          <div class="project-title">Algorithm Explorer <span class="project-badge">Algorithms</span></div>
+          <div class="project-desc">Compared and visualized the efficiency of classic and AI-generated sorting algorithms. Interactive and educational.</div>
+        </div>
+        <div class="project-card">
+          <div class="project-title">Rugby Shop Web App <span class="project-badge">Web</span></div>
+          <div class="project-desc">Created an online rugby shop with cart and checkout using JavaScript, HTML, and CSS. Focused on clean UI and smooth UX.</div>
+        </div>
+      </div>
     </div>
   </div>
+  <footer class="footer">
+    <div>© 2025 Peter Hyland. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="mailto:peterhyland101210@gmail.com">Email</a> |
+      <a href="https://github.com/peter-c-hyland" target="_blank">GitHub</a> |
+      <a href="tel:+353860763015">+353 860763015</a>
+    </div>
+  </footer>
 </body>
 </html>
