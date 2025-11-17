@@ -397,6 +397,54 @@
       font-weight: 700;
     }
     
+    /* Award Images */
+    .award-image-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      margin-top: 2em;
+    }
+    
+    .award-image-card {
+      flex: 1 1 400px;
+      max-width: 500px;
+      background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      padding: 24px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    
+    .award-image-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 16px 48px rgba(102, 126, 234, 0.25);
+    }
+    
+    .award-img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      display: block;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+    
+    .award-image-card:hover .award-img {
+      box-shadow: 0 8px 24px rgba(102, 126, 234, 0.2);
+    }
+    
+    .award-caption {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 1.05em;
+      font-weight: 600;
+      color: #2d3748;
+      line-height: 1.5;
+    }
+    
     /* Skills Section */
     .skills-container {
       display: flex;
@@ -698,6 +746,15 @@
       .projects-grid {
         grid-template-columns: 1fr;
       }
+      
+      .award-image-row {
+        flex-direction: column;
+        gap: 24px;
+      }
+      
+      .award-image-card {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
@@ -760,9 +817,15 @@
           <div><strong>Best Final Year Project (UCC 2025)</strong> — Awarded for the Adaptive Learning App, an AI-powered mobile application</div>
           <div><strong>3rd Place AXIS BIC Entrepreneurship Award</strong> — Recognition for innovative business potential</div>
           <div><strong>UCC Sport Award (Rugby, 2025)</strong> — Excellence in collegiate rugby</div>
-          <div style="margin-top: 1.5em; text-align: center;">
-            <!-- Award images will be displayed here -->
-            <div style="color: #718096; font-style: italic;">Award certificate images to be added</div>
+          <div class="award-image-row">
+            <div class="award-image-card fade-in">
+              <img src="images/best-project.png" alt="Best Final Year Project Award certificate from University College Cork 2025" class="award-img">
+              <div class="award-caption">Best Project Award</div>
+            </div>
+            <div class="award-image-card fade-in">
+              <img src="images/entrepreneurship-award.webp" alt="3rd Place AXIS BIC Entrepreneurship Award certificate" class="award-img">
+              <div class="award-caption">3rd Place AXIS BIC Entrepreneurship Award</div>
+            </div>
           </div>
         </div>
       </div>
@@ -934,10 +997,16 @@
       threshold: 0.1
     });
     
-    fadeElements.forEach(el => {
+    fadeElements.forEach((el, index) => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(30px)';
-      el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      // Add staggered delay for award image cards
+      if (el.classList.contains('award-image-card')) {
+        el.style.transition = 'opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+        el.style.transitionDelay = `${(index % 2) * 0.15}s`;
+      } else {
+        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      }
       fadeObserver.observe(el);
     });
   </script>
